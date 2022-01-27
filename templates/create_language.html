@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %} Школа изучения иностранных языков {% endblock %}
+
+{% block navigation %}
+	{% include "inc-navigation.html" %}
+{% endblock %}
+{% block body %}
+    <div style="margin-top:50px; margin-left:70px ">
+        <h1>Добавление нового языка</h1>
+        <form  method="post">
+            <input style="margin-bottom:10px; width:15%" class="form-control" type="text" name="name" placeholder="Название">
+            <button class="btn btn-primary" type="submit">Сохранить и вернуться на главную</button>
+        </form>
+    </div>
+
+{% endblock %}

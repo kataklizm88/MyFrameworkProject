@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %} Список курсов {% endblock %}
+
+{% block navigation %}
+	{% include "inc-navigation.html" %}
+{% endblock %}
+{% block body %}
+
+
+    <div style="margin-top:50px; margin-left:70px">
+
+
+        <h1>Список курсов по всем языкам</h1>
+        {% for item in objects_list %}
+        <li style="margin-bottom:10px; width:15%" class="form-control">
+            {{item.name}} по {{item.language.name}} языку
+        </li>
+        {% endfor %}
+    </div>
+
+
+{% endblock %}

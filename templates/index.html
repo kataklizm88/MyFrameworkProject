@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block title %} Школа изучения иностранных языков {% endblock %}
+
+{% block navigation %}
+	{% include "inc-navigation.html" %}
+{% endblock %}
+{% block body %}
+
+	<div style="margin-top:50px; margin-left:70px" >
+		<a href="/create-language/" class="btn btn-primary">Добавить изучение нового языка</a>
+		<div style="margin-top:50px">
+			<h1 >Список существующих языков</h1>
+			<ul class="list-group">
+				{% for item in objects_list %}
+				<li class="list-group-item">
+					{{item.name}} Язык.  <span> Количество курсов:  {{item.courses_count()}}</span>
+					<a href="/courses-list/?id={{item.id}}">Показать курсы</a>
+				</li>
+			</ul>
+		</div>
+
+        {% endfor %}
+	</div>
+	<div style="margin-top:50px; margin-left:70px">
+		<h1  style="margin-bottom:30px">Раздел для работы со студентами</h1>
+		<li>
+			<a href="/student-list/">Список студентов</a>
+		</li>
+		<li>
+			<a href="/student-create/">Создать студента</a>
+		</li>
+		<li>
+			<a href="/student-add/">Добавить студента на курс</a>
+		</li>
+	</div>
+
+{% endblock %}

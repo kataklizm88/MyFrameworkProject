@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block title %} Список курсов {% endblock %}
+
+{% block navigation %}
+	{% include "inc-navigation.html" %}
+{% endblock %}
+{% block body %}
+
+
+	<div style="margin-top:50px; margin-left:70px">
+
+			<a class="btn btn-primary" href="/student-create/">Создать студента</a>
+			<a class="btn btn-primary" href="/student-add/">Добавить студента на курс</a>
+
+	</div>
+
+    <div style="margin-top:50px; margin-left:70px">
+        <h1>Список студентов</h1>
+        {% for item in objects_list %}
+        <li>
+            {{item.name}} записан на курс
+            {% for course in item.courses %}
+                {{course.name}}
+            {% endfor %}
+        </li>
+        {% endfor %}
+    </div>
+
+
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %} Список курсов {% endblock %}
+
+{% block navigation %}
+	{% include "inc-navigation.html" %}
+{% endblock %}
+{% block body %}
+
+
+    <div style="margin-top:50px; margin-left:70px">
+        <a class="btn btn-primary" href="/create-course/?id={{id}}">Создать новый курс</a>
+        <br>
+        <h1>Список курсов по {{name}} языку</h1>
+        {% for item in objects_list %}
+        <li style="margin-bottom:10px; width:15%" class="form-control">
+            {{item.name}} <span><a href="/copy-course/?name={{item.name}}">скопировать</a></span>
+        </li>
+        {% endfor %}
+    </div>
+
+
+{% endblock %}

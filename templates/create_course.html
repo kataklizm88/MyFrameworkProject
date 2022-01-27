@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block title %} Список курсов {% endblock %}
+
+{% block navigation %}
+	{% include "inc-navigation.html" %}
+{% endblock %}
+{% block body %}
+
+
+    <div style="margin-top:50px; margin-left:70px ">
+        <h1>Создание курса для {{name}} языка</h1>
+        <form method="post">
+            <input style="margin-bottom:10px; width:15%" class="form-control" type="text" name="name" placeholder="Название">
+            <button class="btn btn-primary" type="submit">Сохранить и вернуться к списку курсов</button>
+        </form>
+    </div>
+
+
+{% endblock %}

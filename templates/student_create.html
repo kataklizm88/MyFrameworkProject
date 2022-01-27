@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %} Список курсов {% endblock %}
+
+{% block navigation %}
+	{% include "inc-navigation.html" %}
+{% endblock %}
+{% block body %}
+	<div style="margin-top:50px; margin-left:70px ">
+
+			<a class="btn btn-primary" href="/student-list/">Список студентов</a>
+
+
+			<a class="btn btn-primary" href="/student-add/">Добавить студента на курс</a>
+
+	</div>
+    <div style="margin-top:50px; margin-left:70px ">
+        <h1>Создание студента</h1>
+        <form method="post">
+            <input style="margin-bottom:10px; width:15%" class="form-control" type="text" name="name" placeholder="Имя">
+            <button class="btn btn-primary" type="submit">Сохранить</button>
+        </form>
+    </div>
+
+
+
+{% endblock %}
